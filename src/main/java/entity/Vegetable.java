@@ -1,15 +1,18 @@
 package entity;
 
-public class Vegetable {
+
+
+public class Vegetable  implements Comparable<Vegetable> {
     private String name;
-    private double kiloCaloriesInG;//   1kKal iin 1 gramm
+    private Double kiloCaloriesInG;//   1kKal iin 1 gramm
 
     public Vegetable(){
 
     }
 
-    public Vegetable(String name) {
+    public Vegetable(String name, double kiloCaloriesInG) {
         this.name = name;
+        this.kiloCaloriesInG = kiloCaloriesInG;
     }
 
     public String getName() {
@@ -24,12 +27,18 @@ public class Vegetable {
         return kiloCaloriesInG;
     }
 
-    public void setKiloCaloriesInG(double kiloCaloriesInG) {
+    public void setKiloCaloriesInG(Double kiloCaloriesInG) {
         this.kiloCaloriesInG = kiloCaloriesInG;
     }
 
     @Override
     public String toString() {
-        return "[" + this.name + "]";
+        return "[name: " + this.name + "  kiloCalories: " + this.kiloCaloriesInG +"]";
+    }
+
+
+    @Override
+    public int compareTo(Vegetable o) {
+        return kiloCaloriesInG.compareTo(o.getKiloCaloriesInG());
     }
 }

@@ -2,13 +2,14 @@ package entity.vagetables;
 
 import entity.Vegetable;
 
-public class RootVegetable extends Vegetable {
+public class RootVegetable extends Vegetable implements Comparable<Vegetable> {
     final private int KEEPING_TIME = 180;
 
 
 
-    public RootVegetable(String name) {
-        super(name);
+    public RootVegetable(String name,double kiloCalories) {
+
+        super(name,kiloCalories);
     }
     public RootVegetable(){
 

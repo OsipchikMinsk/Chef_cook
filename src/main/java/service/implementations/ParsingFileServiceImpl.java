@@ -45,51 +45,45 @@ public class ParsingFileServiceImpl implements ParsingFileService {
 
         for (int i = 0; i < prodSize; i++) {
             String[] prod = productsWithCalories.get(i).split("\\s+");
-            System.out.println("PROD :" + prod );
             String name = prod[0].toUpperCase();
             Vegetable vegetable;
             switch (name) {
                 case "TOMATO":
-                    vegetable = new FruitVegetable(FruitVegetable.listOfFruitVegetable.TOMATO.name());
+                    vegetable = new FruitVegetable(FruitVegetable.listOfFruitVegetable.TOMATO.name(),20);
                     break;
                 case "PEPPER":
-                    vegetable = new FruitVegetable(FruitVegetable.listOfFruitVegetable.PEPPER.name());
+                    vegetable = new FruitVegetable(FruitVegetable.listOfFruitVegetable.PEPPER.name(),30);
                     break;
                 case "CUCUMBER":
-                    vegetable = new FruitVegetable(FruitVegetable.listOfFruitVegetable.CUCUMBER.name());
+                    vegetable = new FruitVegetable(FruitVegetable.listOfFruitVegetable.CUCUMBER.name(),10);
                     break;
                 case "PARSLEY":
-                    vegetable = new GreenVegetable(GreenVegetable.listOfGreenVegetable.PARSLEY.name());
+                    vegetable = new GreenVegetable(GreenVegetable.listOfGreenVegetable.PARSLEY.name(),15);
                     break;
                 case "LETTUCE":
-                    vegetable = new GreenVegetable(GreenVegetable.listOfGreenVegetable.LETTUCE.name());
+                    vegetable = new GreenVegetable(GreenVegetable.listOfGreenVegetable.LETTUCE.name(),30);
                     break;
                 case "ARAGULA":
-                    vegetable = new GreenVegetable(GreenVegetable.listOfGreenVegetable.ARAGULA.name());
+                    vegetable = new GreenVegetable(GreenVegetable.listOfGreenVegetable.ARAGULA.name(),40);
                     break;
                 case "POTATOES":
-                    vegetable = new RootVegetable(RootVegetable.listOfRootVegetable.POTATOES.name());
+                    vegetable = new RootVegetable(RootVegetable.listOfRootVegetable.POTATOES.name(),60);
                     break;
                 case "CARROT":
-                    vegetable = new RootVegetable(RootVegetable.listOfRootVegetable.CARROT.name());
+                    vegetable = new RootVegetable(RootVegetable.listOfRootVegetable.CARROT.name(),50);
                     break;
                 case "ONION":
-                    vegetable = new RootVegetable(RootVegetable.listOfRootVegetable.ONION.name());
+                    vegetable = new RootVegetable(RootVegetable.listOfRootVegetable.ONION.name(),11);
                     break;
                 default:
                     vegetable = null;
             }
            if (vegetable != null) {
                 products.put(vegetable, Integer.parseInt(prod[1]));
-                System.out.println("INSERT: " + vegetable.getName() + " : " + Integer.parseInt(prod[1]));
+
           }
         }
-        System.out.println("AFTER:");
-        System.out.println("------------------------------------------");
-        for (Map.Entry<Vegetable, Integer> product : products.entrySet()) {
-            System.out.println(product.getKey() + "/" + product.getValue());
 
-        }
     return products;
     }
 }

@@ -8,11 +8,9 @@ import service.implementations.ParsingFileServiceImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class ParsingFileServiceTest {
-    ParsingFileServiceImpl parsingFileService = new ParsingFileServiceImpl();
-
+    private ParsingFileServiceImpl parsingFileService = new ParsingFileServiceImpl();
 
     @Test
     void getProductsFromFileTest() {
@@ -39,7 +37,7 @@ public class ParsingFileServiceTest {
     }
 
     @Test
-    void  getProductFromSaladLine () throws AssertionError{
+    void getProductFromSaladLine() throws AssertionError {
         ArrayList<String> testSalad1 = new ArrayList();
         testSalad1.add("POTATOES 20");
         testSalad1.add("PARSLEY 5");
@@ -47,23 +45,14 @@ public class ParsingFileServiceTest {
         testSalad1.add("LETTUCE 100");
         testSalad1.add("PEPPER 55");
         HashMap<Vegetable, Integer> testProducts = new HashMap<>();
-        testProducts.put( new RootVegetable("POTATOES"), 20); //PATATO
-        testProducts.put( new GreenVegetable("PARSLEY"), 5); //PARSLEY
-        testProducts.put( new FruitVegetable("TOMATO"), 50); //TOMATO
-        testProducts.put( new GreenVegetable("LETTUCE"), 100); //LETTUCE
-        testProducts.put( new FruitVegetable("PEPPER"), 55); //PEPPER
+        testProducts.put(new RootVegetable("POTATOES", 60), 20); //PATATO
+        testProducts.put( new GreenVegetable("PARSLEY",15), 5); //PARSLEY
+        testProducts.put( new FruitVegetable("TOMATO",20), 50); //TOMATO
+        testProducts.put( new GreenVegetable("LETTUCE",30), 100); //LETTUCE
+        testProducts.put( new FruitVegetable("PEPPER",30), 55); //PEPPER
 
-        System.out.println("BEFORE:");
-        System.out.println("------------------------------------------");
-        for (Map.Entry<Vegetable, Integer> product : testProducts.entrySet()) {
-            System.out.println(product.getKey() + "/" + product.getValue());
-
-        }
-        System.out.println(testProducts.size());
-
-//        System.out.println("RESULT: " + parsingFileService.getProductFromSaladLine(testSalad1)); //разобраться с null
-        Assert.assertEquals(testProducts, parsingFileService.getProductFromSaladLine(testSalad1));
-
-
+        Assert.assertEquals(parsingFileService.getProductFromSaladLine(testSalad1), testProducts);
     }
 }
+
+
