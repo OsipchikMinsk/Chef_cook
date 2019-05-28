@@ -9,5 +9,5 @@ import java.util.Set;
 public interface CalculatingService {
     public double calculateKiloCalories(Salad salad);
     public List<Vegetable> sortByKiloCalories(Salad salad);
-    public void sortByKiloCaloriesAndKeepingTime();
+    public List<Vegetable> sortByKiloCaloriesAndKeepingTime(Salad salad);
 }

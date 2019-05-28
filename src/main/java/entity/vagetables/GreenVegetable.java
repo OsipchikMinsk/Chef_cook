@@ -21,5 +21,5 @@ public class GreenVegetable extends Vegetable {
         PARSLEY,
         LETTUCE,
         ARAGULA
-    }
+   }
 }
