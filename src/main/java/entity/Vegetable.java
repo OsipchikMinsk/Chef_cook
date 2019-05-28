@@ -4,7 +4,7 @@ package entity;
 
 public class Vegetable  implements Comparable<Vegetable> {
     private String name;
-    private Double kiloCaloriesInG;//   1kKal iin 1 gramm
+    private Double kiloCaloriesInG;//   1kKal in 1 gramm
 
     public Vegetable(){
 

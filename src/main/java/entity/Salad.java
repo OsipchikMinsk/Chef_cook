@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Salad {
     private String name;
-    HashMap<Vegetable, Integer> products;
+    HashMap<Vegetable, Integer> products; //
 
     public Salad(String name, HashMap<Vegetable, Integer> products) {
         this.name = name;

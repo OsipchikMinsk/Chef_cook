@@ -19,7 +19,7 @@ public class CalculatingServiceImpl implements CalculatingService {
     }
 
     public  List<Vegetable> sortByKiloCalories(Salad salad) {
-        List<Vegetable> products =  new ArrayList<Vegetable>();
+        List<Vegetable> products =  new ArrayList<>();
         products.addAll(salad.getProducts().keySet());
         products.forEach( prod -> {
             System.out.println("PRODUCT: " + prod);
